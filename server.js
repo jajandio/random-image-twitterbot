@@ -26,13 +26,7 @@ function upload_random_image(images){
       console.log('Now tweeting it...');
 
       T.post('statuses/update', {
-        /* You can include text with your image as well. */            
-        // status: 'New picture!', 
-        /* Or you can pick random text from an array. */            
-        status: random_from_array([
-          'New picture!',
-          'Check this out!'
-        ]),
+        status: 'New picture!',
         media_ids: new Array(data.media_id_string)
       },
         function(err, data, response) {
