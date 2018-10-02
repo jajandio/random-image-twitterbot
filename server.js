@@ -3,6 +3,8 @@ var fs = require('fs'),
     Twit = require('twit'),
     config = require(path.join(__dirname, 'config.js'));
 
+var dayInMilliseconds = 1000 * 60 * 60 * 24;
+
 var T = new Twit(config.twitter);
 
 function random_from_array(images){
@@ -59,7 +61,7 @@ fs.readdir(__dirname + '/images', function(err, files) {
   */
     setInterval(function(){
       upload_random_image(images);
-    }, 10000);
+    }, dayInMilliseconds);
 
   /*
     Or you could use cron (code.tutsplus.com/tutorials/scheduling-tasks-with-cron-jobs--net-8800), in which case you just need:
